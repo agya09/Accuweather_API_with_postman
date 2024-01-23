@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "f9ecee7f-e578-4ecc-966e-e7ccccbe90a8",
+		"name": "Accuweather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32149829",
+		"_collection_link": "https://gold-firefly-443163.postman.co/workspace/Agya-Workspace~581481e0-6abb-4e6a-aa4e-7fcd412dacea/collection/32149829-f9ecee7f-e578-4ecc-966e-e7ccccbe90a8?action=share&source=collection_link&creator=32149829"
+	},
+	"item": [
+		{
+			"name": "Forecast",
+			"item": [
+				{
+					"name": "Retrieve forecast summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": " MJlTFsfzqbBaoZUwE76NPRdz4viCwI0h ",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "apikey",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/forecasts/v1/minute?q=40.9, -77.6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"forecasts",
+								"v1",
+								"minute"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "40.9, -77.6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve data-failed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/forecasts/v1/minute?apikey= MJlTFsfzqbBaoZUwE76NPRdz4viCwI0h &q=-44.0,88.3{",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"forecasts",
+								"v1",
+								"minute"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": " MJlTFsfzqbBaoZUwE76NPRdz4viCwI0h "
+								},
+								{
+									"key": "q",
+									"value": "-44.0,88.3{"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Get administrative areas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/adminareas/VI?apikey={{location_api_key}}&offset=50",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"adminareas",
+								"VI"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								},
+								{
+									"key": "offset",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all regions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/regions?apikey={{location_api_key}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"regions"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get first 50 top cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/topcities/50?apikey={{location_api_key}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"topcities",
+								"50"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get countries region-wise",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/countries/ASIA?apikey={{location_api_key}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"countries",
+								"ASIA"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of countries matching search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/cities/autocomplete?apikey={{location_api_key}}&q=as",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"cities",
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								},
+								{
+									"key": "q",
+									"value": "as"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get neighbours",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/cities/neighbors/318849?apikey={{location_api_key}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"cities",
+								"neighbors",
+								"318849"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get information using location key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/318849?apikey={{location_api_key}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"318849"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/locations/v1/cities/search?apikey={{location_api_key}}&q=nepal",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"locations",
+								"v1",
+								"cities",
+								"search"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{location_api_key}}"
+								},
+								{
+									"key": "q",
+									"value": "nepal"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "location_api_key",
+			"value": "Y0ZclSlYkX7jAWsAe5LGAe9ugsRppvDZ"
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://dataservice.accuweather.com"
+		}
+	]
+}
